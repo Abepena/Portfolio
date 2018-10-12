@@ -8,9 +8,10 @@
         <div class="container">
             <div class="row">
                 <div class="left col-md-6">
-                    <h1 class="header-title">Abe The <span class="rotating">Developer</span></h1>
-                    <p class="header-subtitle">Software Developer that sweats the small things. Passionate about all that
-                        involves code.</p>
+                    <h1 class="header-title">Abe Pena</h1>
+                    <p class="header-subtitle">Engineer that sweats the small things.
+                    <br> 
+                    Passionate about all things that involve code.</p>
                 </div>
                 <div class="right col-md-6">
                     <div class="header-buttons">
@@ -56,11 +57,11 @@
 
                         <span><li class="skill"><img class="img-fluid" src="{% static 'jobs/images/python-5.svg'%}" alt="Python"></li>
                             <p class=""></p></span>
-                        <span><li class="skill"><img class="img-fluid mx-auto" src="{% static 'jobs/images/postgresql.svg'%}" alt="Postgres"></li>
+                        <span><li class="skill"><img class="img-fluid mx-auto" src="{% static 'jobs/images/postgresql.svg'%}"
+                                    alt="Postgres"></li>
                             <p class=""></p></span>
                         <span><li class="skill"><img class="img-fluid" src="{% static 'jobs/images/javascript.svg'%}" alt=""></li>
-                            <p
-                                class=""></p></span>
+                            <p class=""></p></span>
                     </div>
                     <div class="col-md-6 d-flex justify-content-around align-items-start py-3">
                         <li class="skill"><img class="img-fluid" src="{% static 'jobs/images/html5.svg'%}" alt=""></li>
@@ -72,11 +73,32 @@
 
             </ul>
         </div>
-        <section id="#jobs" class="">
+        <section id="projects" class="">
+            <h2 class="text-center py-4">Projects</h2>
+            <div class="container">
+                <div class="row">
+                    {% for project in projects %}
+                    <div class="col-md-4">
+                        <h5 class="project-title text-center">{{ project.name }}</h5>
+                        <div class="project-container">
+                            <div class="browser-mockup {% if forloop.last %} {% else %} mb-3 {%endif%}">
+                                <img class="img-fluid" src="{{ project.image.url }}" />
+                            </div>
+                            <div class="demo-buttons text-center">
+                                <a href="" class="btn btn-success mr-2">Github</a>
+                                <a href="" class="btn btn-light">Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+        <section id="jobs" class="">
             <h2 class="text-center py-4">Past Jobs</h2>
             <div class="container">
                 <div class="row">
-                    {% for job in jobs.all %}
+                    {% for job in jobs%}
                     <div class="col-md-6">
                         <div class="card mb-4 box-shadow">
                             <img class="card-img-top job-image" src="{{ job.image.url }}">
@@ -105,7 +127,7 @@
                     <div class="col-md-6">
                         <p class="">
                             In a nutshell I would consider myself a lifelong learner. I get enjoyment from learning as much as I can today for that day
-                            when someone asks for my help in the future. In college I studied Aerospace Engineering and I
+                            when someone asks for my help in the future. In college, I studied Aerospace Engineering and I
                             worked on some pretty cool projects and teams prototyping, testing, and shipping real products
                             out there in the world today. Nowadays what I get my enjoyment from is making something from
                             just an idea with code.
@@ -122,7 +144,8 @@
                             Once I started <strong>I got hooked!</strong> Learning <strong>Python</strong>
                             led to teaching myself <strong>HTML</strong>, <strong>CSS</strong>, <strong>Javascript</strong>,
                             <strong>SQL</strong>, and frameworks like <strong>Django</strong>. All of which were used to
-                            build this website/blog. And of course, coming from Aerospace Design I have experience with 3D modeling software. 
+                            build this website/blog. And of course, coming from Aerospace Design I have experience with 3D
+                            modeling software.
                         </p>
                         <p>
                             My goals for the future are to continue to do meaningful work, learn every day, and I hope to one day share all that knowledge
@@ -137,14 +160,6 @@
                 <a href="mailto:pena.abe@gmail.com" class="my-4 btn btn-success"><h2 class="text-center">Contact Me</h2></a>
             </div>
         </section>
-
-        <div class="container">
-
-
-        </div>
-
-
-
     </div>
 </main>
 

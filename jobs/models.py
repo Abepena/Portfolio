@@ -11,3 +11,27 @@ class Job(models.Model):
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        ordering = ['-end_date']
+
+class Project(models.Model):
+    name = models.CharField(max_length=200)
+    image = models.ImageField(upload_to="images/")
+    description = models.TextField()
+    github_link = models.URLField('Github Link', blank=True, null=True)
+    demo_link = models.URLField('Demo Link', blank=True, null=True)
+
+    def __str__(self):
+        return self.name
+
+class Technology(models.Model):
+    name = models.CharField(max_length=50)
+    project = models.ForeignKey('Project', on_delete='CASCADE', related_name='technologies')
+
+    def __str__(self):
+        return self.name
+        
+    class Meta:
+        verbose_name = 'Technology'
+        verbose_name_plural = 'Technologies'

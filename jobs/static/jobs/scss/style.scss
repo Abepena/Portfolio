@@ -1,92 +1,131 @@
+@import "../../../../blog/static/blog/scss/blog";
+
 $primary-color: #7bd12a;
 $secondary-color: #67af24;
 $background-color: #222629;
 $gray: #636262;
-$light-gray: #6B6E70;
+$light-gray: #6b6e70;
 $white: #fff;
 $break-medium: 768px;
 
-h1,h2,h3,h4,h5,h6{
-  font-family: 'Roboto Slab', serif;
-}
-
-.navbar-white.bg-gray {
-  background-color: $background-color;
-}
-
+//Resets
 html,
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
-body {
-  background: $background-color;
-  color: $light-gray;
 
+//Header Styling
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto Slab", serif;
+}
+
+//Navbar Styling
+.navbar-white.bg-gray {
+  background-color: $background-color;
+}
+
+.navbar-white {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+.navbar-white a {
+  font-size: 1.2rem;
+  color: $white;
+  @media screen and (max-width: $break-medium) {
+    font-size: 1em;
+  }
+}
+.navbar-white .navbar-brand {
+  font-size: 2em;
+  font-family: "Satisfy", cursive;
+  @media screen and (max-width: $break-medium) {
+    font-size: 1.5em;
+  }
+}
+
+// Background Clippaths
+.bg,
+.bg2,
+.bg3 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.bg {
+  z-index: -1;
+  background: $primary-color;
+  -webkit-clip-path: polygon(77% 79%, 100% 46%, 100% 100%, 0% 100%);
+  clip-path: polygon(77% 79%, 100% 46%, 100% 100%, 0% 100%);
+}
+
+.bg2 {
+  z-index: -2;
+  background: $secondary-color;
+  -webkit-clip-path: polygon(76% 72%, 100% 35%, 100% 100%, 0% 100%);
+  clip-path: polygon(76% 72%, 100% 35%, 100% 100%, 0% 100%);
+}
+
+.bg3 {
+  z-index: -3;
+  background: $background-color;
+}
+
+//Browser borders for projects section
+.browser-mockup {
+  border-top: 2em solid rgba(230, 230, 230, 0.7);
+  box-shadow: 0 0.1em 1em 0 rgba(0, 0, 0, 0.4);
+  position: relative;
+  border-radius: 3px 3px 0 0;
+  transition: 0.5s ease;
+  margin: 1em 0;
+
+  &:before {
+    display: block;
+    position: absolute;
+    content: "";
+    top: -1.25em;
+    left: 1em;
+    width: 0.5em;
+    height: 0.5em;
+    border-radius: 50%;
+    background-color: #f44;
+    box-shadow: 0 0 0 2px #f44, 1.5em 0 0 2px #9b3, 3em 0 0 2px #fb5;
+  }
+}
+
+
+body {
+  background: $primary-color;
+  color: $light-gray;
 
   header {
     height: 100vh;
     display: grid;
-
-    .navbar-white {
-      box-shadow: 0 0 20px rgba(0,0,0,0.3);
-    }
-    .navbar-white a {
-      font-size: 1.2rem;
-      color: $white;
-      @media screen and (max-width: $break-medium) {
-        font-size: 1em;
-      }
-    }
-    .navbar-white .navbar-brand{
-      font-size: 2em;
-      font-family: 'Satisfy', cursive;
-      @media screen and (max-width: $break-medium) {
-        font-size: 1.5em;
-      }
-    }
-
-
-    .bg,
-    .bg2 {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-    }
-
-    .bg {
-      z-index: -1;
-      background: $primary-color;
-      -webkit-clip-path: polygon(77% 79%, 100% 46%, 100% 100%, 0% 100%);
-      clip-path: polygon(77% 79%, 100% 46%, 100% 100%, 0% 100%);
-    }
-
-    .bg2 {
-      z-index: -2;
-      background: $secondary-color;
-      -webkit-clip-path: polygon(76% 72%, 100% 35%, 100% 100%, 0% 100%);
-      clip-path: polygon(76% 72%, 100% 35%, 100% 100%, 0% 100%);
-    }
 
     .left,
     .right {
       padding: 0 1rem;
     }
 
-    .left{
+    .left {
       display: flex;
       flex-direction: column;
       justify-content: center;
-
 
       .header-title {
         font-size: 3rem;
         color: $white;
         @media screen and (max-width: $break-medium) {
-         text-align: center;
-         font-size: 2em;
+          text-align: center;
+          font-size: 2em;
         }
       }
 
@@ -97,7 +136,6 @@ body {
           font-size: 1rem;
         }
       }
-
     }
 
     .header-buttons {
@@ -107,7 +145,7 @@ body {
       margin-bottom: 20px;
 
       .btn-header {
-        font-size: calc((.5 * 1vw) + .7rem);
+        font-size: calc((0.5 * 1vw) + 0.7rem);
         display: grid;
         grid-template-columns: 1fr 4fr;
         border-radius: 10px;
@@ -115,41 +153,46 @@ body {
         background: $white;
         color: $gray;
         text-decoration: none;
-        border-bottom: 4px solid rgba(0, 0, 0, .2);
-        box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+        border-bottom: 4px solid rgba(0, 0, 0, 0.2);
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
         transform: rotateY(-20deg) rotateX(15deg);
         position: relative;
-        transition: box-shadow,transform .3s;
+        transition: box-shadow, transform 0.3s;
+        overflow: hidden;
 
-        &:nth-child(1){
+        @media screen and (max-width: $break-medium) {
+          transform: rotateY(0) rotateX(0);
+          font-size: 1rem;
+          margin-bottom: 1em;
+        }
+
+        &:nth-child(1) {
           z-index: 2;
         }
 
-        &:nth-child(2){
+        &:nth-child(2) {
           z-index: 1;
           margin-top: -10px;
         }
 
-        &:nth-child(3){
+        &:nth-child(3) {
           margin-top: -10px;
         }
-        
+
         &::after {
-          
           opacity: 0;
-          transition: opacity .3s ease-in-out
+          transition: opacity 0.3s ease-in-out;
         }
 
-        &:hover{
+        &:hover {
           z-index: 5;
-          box-shadow: 0 0px 20px rgba(0,0,0,0.3);
+          box-shadow: 0 0px 20px rgba(0, 0, 0, 0.3);
           transform: scale(1.1) rotateX(0) rotateY(0);
 
-          &::after{
+          &::after {
             opacity: 1;
           }
         }
-
 
         .logo {
           padding: 5px;
@@ -164,32 +207,31 @@ body {
     }
   }
 
-      
   .skills {
     list-style: none;
     padding: 0;
 
-    .skill{
+    .skill {
       img {
         display: block;
       }
       color: black;
-      width:50px;
-      margin:0;
+      width: 50px;
+      margin: 0;
     }
   }
 
-  .main{
+  .main {
     padding-top: 2rem;
     background: $primary-color;
     padding-bottom: 20px;
-  
+
     .main-raised {
       padding-top: 3rem;
       margin: -5rem 2rem 0 2rem;
       background: $white;
       border-radius: 10px;
-      box-shadow: 0 0 50px rgba(0, 0, 0, .2);
+      box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
     }
   }
 
