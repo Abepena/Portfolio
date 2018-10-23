@@ -10,13 +10,16 @@
   margin-bottom: 50px;
 }
 
-html,
-body {
+html {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-family: "Roboto", sans-serif;
+}
+
+body {
+  padding-top: 60px;
 }
 
 ul {
