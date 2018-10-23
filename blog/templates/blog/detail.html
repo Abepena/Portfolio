@@ -11,7 +11,11 @@
   <div class="container blog-post">
     <h1 class="text-center pt-3 blog-title">{{ blog.title }}</h1>
     <p class="text-sm text-center">{{ blog.date_only }}</p>
-    <img class="mx-auto d-block blog-image" src="{{ blog.image.url }}" alt="{{ blog.title }}" height="400px">
+    <div class="row">
+      <div class="col-md-4 mx-auto">
+        <img class="img-fluid" src="{{ blog.image.url }}" alt="{{ blog.title }}" height="400px">
+      </div>
+    </div>
         
     <p>{{ blog.body|markdown_to_html }}</p>
   </div>

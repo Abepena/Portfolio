@@ -10,8 +10,7 @@
                 <div class="left col-md-6">
                     <h1 class="header-title">Abe Pena</h1>
                     <p class="header-subtitle">Engineer that sweats the small things.
-                    <br> 
-                    Passionate about all things that involve code.</p>
+                        <br> Passionate about all things that involve code.</p>
                 </div>
                 <div class="right col-md-6">
                     <div class="header-buttons">
@@ -45,34 +44,6 @@
 
 <main class="main">
     <div class="main-raised">
-        <div class="container">
-            <h2 class="pb-4 text-center">Skills</h2>
-            <ul class="skills">
-                <div class="row">
-                    <div class="col-md-6 d-flex justify-content-around align-items-start py-3">
-                        <span>
-                            <li class="skill"><img class="img-fluid" src="{% static 'jobs/images/django.svg' %}" alt="django"></li>
-                            <p></p>
-                        </span>
-
-                        <span><li class="skill"><img class="img-fluid" src="{% static 'jobs/images/python-5.svg'%}" alt="Python"></li>
-                            <p class=""></p></span>
-                        <span><li class="skill"><img class="img-fluid mx-auto" src="{% static 'jobs/images/postgresql.svg'%}"
-                                    alt="Postgres"></li>
-                            <p class=""></p></span>
-                        <span><li class="skill"><img class="img-fluid" src="{% static 'jobs/images/javascript.svg'%}" alt=""></li>
-                            <p class=""></p></span>
-                    </div>
-                    <div class="col-md-6 d-flex justify-content-around align-items-start py-3">
-                        <li class="skill"><img class="img-fluid" src="{% static 'jobs/images/html5.svg'%}" alt=""></li>
-                        <li class="skill"><img class="img-fluid" src="{% static 'jobs/images/css-3.svg'%}" alt=""></li>
-                        <li class="skill"><img class="img-fluid py-3" src="{% static 'jobs/images/sass-1.svg'%}" alt=""></li>
-                        <li class="skill"><img class="img-fluid py-2" src="{% static 'jobs/images/bootstrap-4.svg'%}" alt=""></li>
-                    </div>
-                </div>
-
-            </ul>
-        </div>
         <section id="projects" class="">
             <h2 class="text-center py-4">Projects</h2>
             <div class="container">
@@ -85,8 +56,12 @@
                                 <img class="img-fluid" src="{{ project.image.url }}" />
                             </div>
                             <div class="demo-buttons text-center">
-                                <a href="" class="btn btn-success mr-2">Github</a>
-                                <a href="" class="btn btn-light">Demo</a>
+                                {% if project.github_link %}
+                                <a href="{{ project.github_link }}" target="_blank" class="btn btn-success mr-2">Github</a>
+                                {% endif %}
+                                {% if project.demo_link %}
+                                <a href="{{ project.demo_link }}" target="_blank" class="btn btn-light">Demo</a>
+                                {% endif %}
                             </div>
                         </div>
                     </div>
@@ -127,8 +102,8 @@
                     <div class="col-md-6">
                         <p class="">
                             In a nutshell I would consider myself a lifelong learner. I get enjoyment from learning as much as I can today for that day
-                            when someone asks for my help in the future. In college, I studied Aerospace Engineering and I
-                            worked on some pretty cool projects and teams prototyping, testing, and shipping real products
+                            when someone asks for my help in the future. In college, I studied Aerospace Engineering and
+                            I worked on some pretty cool projects and teams prototyping, testing, and shipping real products
                             out there in the world today. Nowadays what I get my enjoyment from is making something from
                             just an idea with code.
                         </p>
@@ -155,6 +130,42 @@
                 </div>
             </div>
         </section>
+        <div class="container">
+            <h2 class="pb-4 text-center">Skills</h2>
+            <ul class="skills">
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <div class="row justify-content-around align-items-start py-3">
+                            <li class="skill"><img class="img-fluid" src="{% static 'jobs/images/django.svg' %}" alt="django"></li>
+                            <li class="skill"><img class="img-fluid" src="{% static 'jobs/images/python-5.svg'%}" alt="Python"></li>
+                            <li class="skill"><img class="img-fluid mx-auto" src="{% static 'jobs/images/postgresql.svg'%}" alt="Postgres"></li>
+                            <li class="skill"><img class="img-fluid" src="{% static 'jobs/images/javascript.svg'%}" alt=""></li>
+                        </div>
+                        <br>
+                        <div class="row justify-content-around align-items-start py-3">
+                            <li class="skill"><img class="img-fluid" src="{% static 'jobs/images/html5.svg'%}" alt=""></li>
+                            <li class="skill"><img class="img-fluid" src="{% static 'jobs/images/css-3.svg'%}" alt=""></li>
+                            <li class="skill"><img class="img-fluid py-3" src="{% static 'jobs/images/sass-1.svg'%}" alt=""></li>
+                            <li class="skill"><img class="img-fluid py-2" src="{% static 'jobs/images/bootstrap-4.svg'%}" alt="">
+                            </li>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <ul>
+                            <li class="">Django</li>
+                            <li class="">Python</li>
+                            <li class="">Postgres</li>
+                            <li class="">Javascript</li>
+                            <li class="">HTML5</li>
+                            <li class="">CSS3</li>
+                            <li class="">Sass</li>
+                            <li class="">Bootstrap</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </ul>
+        </div>
         <section id="contact" class="">
             <div class="container text-center">
                 <a href="mailto:pena.abe@gmail.com" class="my-4 btn btn-success"><h2 class="text-center">Contact Me</h2></a>

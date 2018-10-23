@@ -19,6 +19,11 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+ul {
+  padding: 0;
+  list-style: none;
+}
+
 h1,
 h2,
 h3,
