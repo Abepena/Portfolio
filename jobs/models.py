@@ -25,6 +25,9 @@ class Project(models.Model):
     def __str__(self):
         return self.name
 
+class Resume(models.Model):
+    upload = models.FileField(upload_to='uploads')
+
 class Technology(models.Model):
     name = models.CharField(max_length=50)
     project = models.ForeignKey('Project', on_delete='CASCADE', related_name='technologies')
