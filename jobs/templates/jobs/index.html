@@ -1,5 +1,5 @@
 {% extends "jobs/base.html" %} {% load static %} {% block title %} Abe Pena{% endblock %} {% block body %}
-<header class="full-pg-section">
+<header id="top" class="full-pg-section">
     <!-- Clip path Backgrounds behind section-->
     <div class="bg"></div>
     <div class="bg2"></div>
@@ -21,7 +21,7 @@
                                 <p>Check out what I've been coding and working on recently</p>
                             </span>
                         </a>
-                        <a class="btn-header" href="#projects">
+                        <a class="btn-header smooth-scroll" href="#projects">
                             <img src="{% static 'jobs/images/coding.svg' %}" alt="projects" class="logo">
                             <span>
                                 <strong>Projects</strong>
@@ -180,3 +180,7 @@
     </div>
 </footer>
 {% endblock %}
+
+{% block javascript %}
+<script src="{% static 'js/smoothScroll.js' %}"></script>
+{% endblock  %}
