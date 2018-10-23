@@ -243,6 +243,7 @@ body header .header-buttons .btn-header:hover::after {
 body header .header-buttons .btn-header .logo {
   padding: 5px;
   width: auto;
+  max-width: 112px;
   height: 100%;
 }
 
