@@ -156,6 +156,7 @@ body header .left .header-title {
 @media screen and (max-width: 768px) {
   body header .left .header-title {
     text-align: center;
+    padding-top: 20px;
     font-size: 2em;
   }
 }
@@ -245,9 +246,11 @@ body header .header-buttons .btn-header:hover::after {
 
 body header .header-buttons .btn-header .logo {
   padding: 5px;
-  width: auto;
-  max-width: 112px;
-  height: 100%;
+  width: 88px;
+  height: 88px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 body header .header-buttons .btn-header span {
@@ -269,6 +272,12 @@ body .skills .skill img {
   display: block;
 }
 
+@media screen and (max-width: 768px) {
+  body .skill-list {
+    text-align: center;
+  }
+}
+
 body .main {
   padding-top: 2rem;
   background: #7bd12a;
@@ -276,8 +285,7 @@ body .main {
 }
 
 body .main .main-raised {
-  padding-top: 3rem;
-  margin: -5rem 2rem 0 2rem;
+  margin: 0 2rem 0 2rem;
   background: #fff;
   border-radius: 10px;
   -webkit-box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);

@@ -1,4 +1,6 @@
 {% extends "jobs/base.html" %} {% load static %} {% block title %} Abe Pena{% endblock %} {% block body %}
+
+
 <header id="top" class="full-pg-section">
     <!-- Clip path Backgrounds behind section-->
     <div class="bg"></div>
@@ -15,21 +17,21 @@
                 <div class="right col-md-6">
                     <div class="header-buttons">
                         <a class="btn-header" href="http://github.com/abepena" target="_blank">
-                            <img src="{% static 'jobs/images/github-octocat.svg' %}" alt="github" class="logo">
+                            <img src="{% static 'jobs/images/github.png' %}" alt="github" class="logo">
                             <span>
                                 <strong>Github</strong>
                                 <p>Check out what I've been coding and working on recently</p>
                             </span>
                         </a>
                         <a class="btn-header smooth-scroll" href="#projects">
-                            <img src="{% static 'jobs/images/coding.svg' %}" alt="projects" class="logo">
+                            <img src="{% static 'jobs/images/content.png' %}" alt="projects" class="logo">
                             <span>
                                 <strong>Projects</strong>
                                 <p>Things I've worked on in the past, and passion projects in progress</p>
                             </span>
                         </a>
                         <a class="btn-header" href="{% url 'blog' %}">
-                            <img src="{% static 'jobs/images/blogging.svg' %}" alt="blog" class="logo">
+                            <img src="{% static 'jobs/images/blogging.png' %}" alt="blog" class="logo">
                             <span>
                                 <strong>Blog</strong>
                                 <p>The start of a journey of documenting my coding adventures</p>
@@ -55,7 +57,7 @@
                             <div class="browser-mockup {% if forloop.last %} {% else %} mb-3 {%endif%}">
                                 <img class="img-fluid" src="{{ project.image.url }}" />
                             </div>
-                            <div class="demo-buttons text-center">
+                            <div class="demo-buttons text-center mb-3">
                                 {% if project.github_link %}
                                 <a href="{{ project.github_link }}" target="_blank" class="btn btn-success mr-2">Github</a>
                                 {% endif %}
@@ -150,8 +152,8 @@
                             </li>
                         </div>
                     </div>
-                    <div class="col-2">
-                        <ul>
+                    <div class="col-md-2">
+                        <ul class="skill-list">
                             <li class="">Django</li>
                             <li class="">Python</li>
                             <li class="">Postgres</li>
